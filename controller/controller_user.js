@@ -35,6 +35,7 @@ router.post('/search', (req, res) => {
             }
             res.status(200).json(rest)
         })
+        
 }).post('/update', (req, res) => {    
     var body=req.body;
     users.update({ dni: body.dni },
