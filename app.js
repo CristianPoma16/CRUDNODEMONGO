@@ -1,16 +1,12 @@
 const express = require('express');
 const body_parser = require('body-parser');
-const morgan = require('morgan');
 const app = express();
 const index_router = require('./Routers/router');
-var connection = require('./dbConfig/baseConfig');
 
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended:true}));
 //views
 app.use(express.static(__dirname + '/view/'));
-//see petitions 
-app.use(morgan('dev'));
 //routes
 app.use('/',index_router);
 
